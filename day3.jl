@@ -24,7 +24,6 @@ println("Part 1:", answer1)
 #part 2
 function get_residual(nums, oxygen = true)
     eliminated = copy(nums)
-    eliminated2 = copy
     for i in 1:len_x     
          curr = Vector{Bool}(); len_y = length(eliminated)
          for j in 1: len_y; append!(curr, parse(Bool,eliminated[j][i])); end
