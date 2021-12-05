@@ -1,9 +1,13 @@
 # Day 4 AOC 2021
 # maziyank@github.com
 
+# read data
 contents = readlines(open("day4.txt", "r"))
+
+# parsing number
 numbers = parse.(Int64, split(contents[1], ","))
 
+# parsing board
 contents_boards = split.(contents[3:length(contents)])
 loc = findall(isempty, contents_boards)
 boards = getindex.(Ref(contents_boards), UnitRange.([1; loc .+ 1], [loc .- 1; length(contents_boards)]))
