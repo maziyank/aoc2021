@@ -1,4 +1,4 @@
-# Day 6 AOC 2021
+# Day 7 AOC 2021
 # maziyank@github.com
 
 input = readlines(open("day7.txt", "r"))
