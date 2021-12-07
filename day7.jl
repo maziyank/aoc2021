@@ -9,6 +9,6 @@ max_pos = maximum(crabs)
 result = [sum(abs.(crabs .- target)) for target in 1:max_pos]
 println("Part 1: ", minimum(result))
 
-#part 1
+#part 2
 result2 = [sum(sum.(range.(0,abs.(crabs .- target),step=1))) for target in 1:max_pos]
 println("Part 2: ", minimum(result2))
