@@ -48,15 +48,15 @@ end;
 
 println("Part 1:", sum(number_flash))
 
-# Part 2
-x = 0; target = prod(size(octopuses))
+# Part 2 (Brute Force!)
+trial = 0; target = prod(size(octopuses))
 flashed_octopus2 = copy(octopuses); max_try = 300;
-while x < max_try
-    global x += 1
+while trial < max_try
+    global trial += 1
     result = step(flashed_octopus2, adj_matrix)      
     global flashed_octopus2 = result[2]       
     if result[1] == target
-        println("Part 2:", x)
+        println("Part 2:", trial)
         break
     end    
 end
