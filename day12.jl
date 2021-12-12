@@ -8,7 +8,6 @@ a = Dict([(point[1], filter(x->x!="start", map(x->x[2], filter(x->x[1]==point[1]
 b = Dict([(point[2], filter(x->x!="start", map(x->x[1], filter(x->x[2]==point[2],input)))) for point in input])
 next_points = merge(vcat, a, b)
 next_points["end"] = []
-routes_candidate = [["start"]]
 
 # Helper
 is_big_cave(s) = match(r"^[A-Z,\s]+$",s) !== nothing
@@ -33,13 +32,13 @@ function next_possible_route(route, part=1)
     (next_routes, finished_routes)
 end
     
-function get_all_correct_routes()
+function get_all_correct_routes(part)
     finished_routes = []
     routes_candidate = [["start"]]
     while length(routes_candidate)>0
        next_routes_candidate = []
        for route in routes_candidate
-            (next, finished) = next_possible_route(route)        
+            (next, finished) = next_possible_route(route, part)        
             push!(next_routes_candidate, next...)                
             push!(finished_routes, finished...)                
        end
