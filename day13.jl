@@ -27,7 +27,7 @@ println("Part 1: ", length(_1st_fold))
 # Part 2
 flipped = copy(dots_coordinate)
 for (kind,value) in fold_points        
-    flipped = kind == 'x' ? fold_x(value, flipped) : fold_y(value, flipped)        
+    global flipped = kind == 'x' ? fold_x(value, flipped) : fold_y(value, flipped)        
 end
 
 draw = fill(".", reverse(maximum(flipped)) .+ 1 )
